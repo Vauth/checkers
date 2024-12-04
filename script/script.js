@@ -312,12 +312,12 @@ class CheckersUI {
             document.getElementById('gameOverModal').style.display = 'none';
         });
 
-        document.getElementById('newGameBtn').addEventListener('click', () => {
-            this.game = new CheckersGame();
-            this.clearSelection();
-            this.updateBoard();
-            document.getElementById('gameOverModal').style.display = 'none';
-        });
+        // document.getElementById('newGameBtn').addEventListener('click', () => {
+        //     this.game = new CheckersGame();
+        //     this.clearSelection();
+        //     this.updateBoard();
+        //     document.getElementById('gameOverModal').style.display = 'none';
+        // });
     }
 
     handleCellClick(e) {
