@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="icon" type="image/png" href="./image/favicon.png">
+    <title>Classic Checkers</title>
+    <link rel="stylesheet" href="./style/style.css">
+</head>
+<body>
+    <div class="game-container">
+        <div class="header">
+            <h1>Classic Checkers</h1>
+            <div class="controls">
+                <select id="difficulty">
+                    <option value="easy">Easy</option>
+                    <option value="medium">Medium</option>
+                    <option value="hard">Hard</option>
+                </select>
+                <button id="newGameBtn">New Game</button>
+                <button id="undoBtn">Undo</button>
+                <button id="redoBtn">Redo</button>
+                <button id="hintBtn">Hint</button>
+            </div>
+            <div class="turn-indicator">
+                <span>Turn: </span>
+                <div id="currentTurn" class="piece"></div>
+            </div>
+        </div>
+        <div id="board" class="board"></div>
+    </div>
+    <div id="gameOverModal" class="modal">
+        <div class="modal-content">
+            <h2 id="gameOverMessage"></h2>
+            <button id="playAgainBtn">Play Again</button>
+        </div>
+    </div>
+    <script src="./script/script.js"></script>
+</body>
+</html>

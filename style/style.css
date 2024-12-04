@@ -1,0 +1,168 @@
+:root {
+    --board-size: min(65vh, 65vw);
+    --cell-size: calc(var(--board-size) / 8);
+    --piece-size: calc(var(--cell-size) * 0.8);
+    --light-square: #f0d9b5;
+    --dark-square: #b58863;
+    --red-piece: #cc0000;
+    --black-piece: #1a1a1a;
+    --hint-size: calc(var(--piece-size) / 4);
+    --hint-color: rgba(0, 255, 0, 0.5);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #2f2f2f;
+    color: #ffffff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+.game-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+}
+
+.header {
+    text-align: center;
+}
+
+.controls {
+    margin: 20px 0;
+    display: flex;
+    gap: 10px;
+}
+
+button, select {
+    padding: 8px 16px;
+    font-size: 1rem;
+    border: none;
+    border-radius: 4px;
+    background-color: #4a4a4a;
+    color: white;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+button:hover, select:hover {
+    background-color: #666666;
+}
+
+.board {
+    width: var(--board-size);
+    height: var(--board-size);
+    display: grid;
+    grid-template-columns: repeat(8, 1fr);
+    border: 4px solid #4a4a4a;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+}
+
+.cell {
+    width: var(--cell-size);
+    height: var(--cell-size);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+.cell.light {
+    background-color: var(--light-square);
+}
+
+.cell.dark {
+    background-color: var(--dark-square);
+}
+
+.piece {
+    width: var(--piece-size);
+    height: var(--piece-size);
+    border-radius: 50%;
+    position: relative;
+    cursor: pointer;
+    transition: transform 0.2s;
+}
+
+.piece.red {
+    background-color: var(--red-piece);
+    box-shadow: 0 0 10px rgba(204, 0, 0, 0.5);
+}
+
+.piece.black {
+    background-color: var(--black-piece);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+.piece.king::after {
+    content: "♔";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: #ffffff;
+    font-size: calc(var(--piece-size) * 0.5);
+}
+
+.piece:hover {
+    transform: scale(1.1);
+}
+
+.hint {
+    position: absolute;
+    width: var(--hint-size);
+    height: var(--hint-size);
+    border-radius: 50%;
+    background-color: var(--hint-color);
+}
+
+.turn-indicator {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    justify-content: center;
+    margin-top: 10px;
+}
+
+.turn-indicator .piece {
+    width: 30px;
+    height: 30px;
+    cursor: default;
+}
+
+.modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-content {
+    background-color: #2f2f2f;
+    padding: 30px;
+    border-radius: 8px;
+    text-align: center;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+}
+
+.modal-content h2 {
+    margin-bottom: 20px;
+}
+
+.selected {
+    transform: scale(1.1);
+    box-shadow: 0 0 15px rgba(255, 255, 255, 0.8);
+}
