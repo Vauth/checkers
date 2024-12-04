@@ -1,5 +1,5 @@
 <h1>Classic <a href="#Favicon"><img src="https://raw.githubusercontent.com/Vauth/checkers/main/image/favicon.png" width="35px"></a> Checkers</h1>
-<p>Classic checkers game using pure static resources.</p>
+<p>Classic checkers game made by bolt.new .</p>
 
 <br>
 
