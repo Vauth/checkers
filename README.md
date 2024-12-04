@@ -5,7 +5,7 @@
 
 ## 🗜 Options
 - New game
-- - Difficulty [Easy, Medium, Hard]
+- Difficulty [Easy, Medium, Hard]
 - Undo, Redo
 - Smooth GUI
 
